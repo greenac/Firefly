@@ -1,51 +1,43 @@
-nav {
-  background: rgba(0, 0, 0, 0.8);
+* {
+  padding: 0;
+  margin: 0;
 }
-nav .nav-wrapper #nav-mobile li:hover {
-  background: #000000;
-}
-nav .nav-wrapper #nav-mobile li a {
-  font-size: 18px;
-}
-nav .nav-wrapper #slide-out #logo {
-  position: relative;
-  top: 20px;
-  height: 180px;
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-}
-nav .nav-wrapper #slide-out li {
-  position: relative;
-  top: 30px;
-}
-nav .nav-wrapper #slide-out li a {
-  font-size: 18px;
-}
-nav .nav-wrapper .button-collapse i {
-  margin-left: 10px;
-}
-#home {
-  background: url('../imgs/group.jpg');
-  background-repeat: no-repeat;
+#home_banner {
+  background: url('../imgs/hbanner.jpeg');
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachement: fixed;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
 }
-#about {
-  background: url('../imgs/back1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  height: 100%;
+#home_banner #home_container {
+  border: 2px solid #ffffff;
   width: 100%;
-  background-size: auto;
-  background-repeat: repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+}
+#home_banner #home_container h1 {
+  font-size: 78px;
+}
+#home_banner #home_container #button_cont {
+  display: inline-block;
+  border: 2px solid white;
+  width: 80%;
+}
+#home_banner #home_container #button_cont .sign {
+  background: none;
+  border: 2px solid #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  width: 400px;
 }

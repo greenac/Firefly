@@ -4,60 +4,24 @@
 @darkorange: #CE620D;
 @tan: #EBAC6B;
 @lighttan: #EEDABC;
+@white: #FFFFFF;
 
-//NAV BAR STYLINGS
-
-nav{
-	background: rgba(0,0,0,0.8); //black with opacity of 0.8
-	.nav-wrapper{
-		#nav-mobile{
-			li{
-				&:hover{
-					background: rgba(0,0,0,1);
-				}
-				a{
-					font-size: 18px;
-				}
-			}
-		}
-		#slide-out{
-			#logo{
-				position: relative;
-				top: 20px;
-				height: 180px;
-				width: 200px;
-				display: block;
-				margin: 0 auto;
-			}
-			li{
-				position: relative;
-				top: 30px;
-				a{
-					font-size: 18px;
-				}
-			}
-		}
-		.button-collapse{
-			i{
-				margin-left: 10px;
-			}
-		}
-	}
+*{
+	padding: 0;
+	margin: 0;
 }
 
-//GENERAL CENTER MIXINS
-.background(@top){
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+//DEFAULT MIXINS 
+
+.position(@pos){
 	position: absolute;
-	top: @top;
+	top: @pos;
 	left: 0;
 	height: 100%;
 	width: 100%;
 }
 
-.mid(){
+.mid_center(){
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -66,18 +30,36 @@ nav{
 	-moz-transform: translate(-50%,-50%);
 }
 
-//HOME STYLINGS 
+//END OF MIXINS 
 
-#home{
-	background: url('../imgs/group.jpg');
-	.background(0);
-}
-
-//ABOUT STYLINGS 
-
-#about{
-	background: url('../imgs/back1.jpg');
-	.background(100%);
-	background-size: auto;
-	background-repeat: repeat;
+//HOME BANNER
+#home_banner{
+	background: url('../imgs/hbanner.jpeg');
+	background-position: center;
+	background-size: cover;
+	background-attachement:fixed;
+	.position(0);
+	#home_container{
+		border: 2px solid @white; //DEV PURPOSES ONLY
+		width: 100%;
+		.mid_center;
+		color: @white;
+		text-align: center;
+		h1{
+			font-size: 78px;
+		}
+		#button_cont{
+			display: inline-block;
+			border: 2px solid white; //DEV PURPOSES ONLY
+			width: 80%;
+			.sign{
+				background: none;
+				border: 2px solid @white;
+				font-size: 20px;
+				padding: 10px;
+				margin: 5px;
+				width: 400px;
+			}
+		}
+	}
 }
