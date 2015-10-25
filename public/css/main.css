@@ -1,0 +1,51 @@
+nav {
+  background: rgba(0, 0, 0, 0.8);
+}
+nav .nav-wrapper #nav-mobile li:hover {
+  background: #000000;
+}
+nav .nav-wrapper #nav-mobile li a {
+  font-size: 18px;
+}
+nav .nav-wrapper #slide-out #logo {
+  position: relative;
+  top: 20px;
+  height: 180px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+nav .nav-wrapper #slide-out li {
+  position: relative;
+  top: 30px;
+}
+nav .nav-wrapper #slide-out li a {
+  font-size: 18px;
+}
+nav .nav-wrapper .button-collapse i {
+  margin-left: 10px;
+}
+#home {
+  background: url('../imgs/group.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#about {
+  background: url('../imgs/back1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: auto;
+  background-repeat: repeat;
+}

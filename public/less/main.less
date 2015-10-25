@@ -1,0 +1,83 @@
+//CHOSEN COLORS 
+@lightblue: #4F7686;
+@darkblue: #2D485C;
+@darkorange: #CE620D;
+@tan: #EBAC6B;
+@lighttan: #EEDABC;
+
+//NAV BAR STYLINGS
+
+nav{
+	background: rgba(0,0,0,0.8); //black with opacity of 0.8
+	.nav-wrapper{
+		#nav-mobile{
+			li{
+				&:hover{
+					background: rgba(0,0,0,1);
+				}
+				a{
+					font-size: 18px;
+				}
+			}
+		}
+		#slide-out{
+			#logo{
+				position: relative;
+				top: 20px;
+				height: 180px;
+				width: 200px;
+				display: block;
+				margin: 0 auto;
+			}
+			li{
+				position: relative;
+				top: 30px;
+				a{
+					font-size: 18px;
+				}
+			}
+		}
+		.button-collapse{
+			i{
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+//GENERAL CENTER MIXINS
+.background(@top){
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: absolute;
+	top: @top;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.mid(){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+}
+
+//HOME STYLINGS 
+
+#home{
+	background: url('../imgs/group.jpg');
+	.background(0);
+}
+
+//ABOUT STYLINGS 
+
+#about{
+	background: url('../imgs/back1.jpg');
+	.background(100%);
+	background-size: auto;
+	background-repeat: repeat;
+}
