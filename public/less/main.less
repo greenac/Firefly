@@ -11,23 +11,23 @@
 	margin: 0;
 }
 
+body{
+	font-family: sans-serif;
+}
+
 //DEFAULT MIXINS 
 
 .position(@pos){
 	position: absolute;
 	top: @pos;
 	left: 0;
-	height: 100%;
+	height: 100%; //COVERS WHOLE SCREEN, CHANGE FOR DIFFERENT EFFECT
 	width: 100%;
 }
 
 .mid_center(){
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	-webkit-transform: translate(-50%,-50%);
-	-moz-transform: translate(-50%,-50%);
+	position: relative;
+	top: 20%;
 }
 
 //END OF MIXINS 
@@ -61,5 +61,43 @@
 				width: 400px;
 			}
 		}
+	}
+}
+
+//ABOUT BANNER
+#about_banner{
+	.position(100%);
+	#about_container{
+		border: 2px solid black; // DEV PURPOSES ONLY
+		text-align: center;
+		color: @lightblue;
+		.mid_center;
+		.container-fluid{
+			.row{
+				.node{
+					height: 150px;
+					width: 150px;
+					margin: 5px 40px;
+				}
+				p{
+					width: 75%;
+					display: block;
+					margin: 0 auto;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+//INSTRUCTOR BANNER 
+#instructor_banner{
+	.position(200%);
+	background: @lightblue;
+	#instructor_container{
+		border:2px solid white; //DEV PURPOSES ONLY
+		text-align: center;
+		color: @white;
+		.mid_center;
 	}
 }

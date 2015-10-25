@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+body {
+  font-family: sans-serif;
+}
 #home_banner {
   background: url('../imgs/hbanner.jpeg');
   background-position: center;
@@ -16,12 +19,8 @@
 #home_banner #home_container {
   border: 2px solid #ffffff;
   width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
+  position: relative;
+  top: 20%;
   color: #ffffff;
   text-align: center;
 }
@@ -40,4 +39,44 @@
   padding: 10px;
   margin: 5px;
   width: 400px;
+}
+#about_banner {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+#about_banner #about_container {
+  border: 2px solid black;
+  text-align: center;
+  color: #4f7686;
+  position: relative;
+  top: 20%;
+}
+#about_banner #about_container .container-fluid .row .node {
+  height: 150px;
+  width: 150px;
+  margin: 5px 40px;
+}
+#about_banner #about_container .container-fluid .row p {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+#instructor_banner {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #4f7686;
+}
+#instructor_banner #instructor_container {
+  border: 2px solid white;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  top: 20%;
 }
