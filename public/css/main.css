@@ -20,7 +20,7 @@ body {
   border: 2px solid #ffffff;
   width: 100%;
   position: relative;
-  top: 20%;
+  top: 15%;
   color: #ffffff;
   text-align: center;
 }
@@ -52,7 +52,7 @@ body {
   text-align: center;
   color: #4f7686;
   position: relative;
-  top: 20%;
+  top: 15%;
 }
 #about_banner #about_container .container-fluid .row .node {
   height: 100px;
@@ -78,7 +78,7 @@ body {
   text-align: center;
   color: #ffffff;
   position: relative;
-  top: 20%;
+  top: 15%;
 }
 #instructor_banner #instructor_container h1 {
   font-size: 50px;
@@ -90,4 +90,9 @@ body {
 #instructor_banner #instructor_container #photo_container .phot_c {
   display: inline-block;
   margin: 0 60px;
+}
+@media only screen and (max-width: 550px) {
+  #instructor_banner {
+    height: 120%;
+  }
 }
