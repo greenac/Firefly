@@ -55,8 +55,8 @@ body {
   top: 20%;
 }
 #about_banner #about_container .container-fluid .row .node {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   margin: 5px 40px;
 }
 #about_banner #about_container .container-fluid .row p {
@@ -79,4 +79,15 @@ body {
   color: #ffffff;
   position: relative;
   top: 20%;
+}
+#instructor_banner #instructor_container h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+#instructor_banner #instructor_container #photo_container {
+  border: 2px solid white;
+}
+#instructor_banner #instructor_container #photo_container .phot_c {
+  display: inline-block;
+  margin: 0 60px;
 }
