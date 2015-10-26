@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-	$('.button-collapse').sideNav({ //sideNav functionality
-		menuWidth: 200,
-		closeOnClick: true});
 
 	$('a[href^="#"]').on('click', function(event) {
 
