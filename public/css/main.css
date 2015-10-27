@@ -6,7 +6,7 @@ body {
   font-family: sans-serif;
 }
 #home_banner {
-  background: url('../imgs/hbanner.jpeg');
+  background: url('../imgs/hbanner.jpg');
   background-position: center;
   background-size: cover;
   background-attachement: fixed;
@@ -17,7 +17,6 @@ body {
   width: 100%;
 }
 #home_banner #home_container {
-  border: 2px solid #ffffff;
   width: 100%;
   position: relative;
   top: 15%;
@@ -29,7 +28,6 @@ body {
 }
 #home_banner #home_container #button_cont {
   display: inline-block;
-  border: 2px solid white;
   width: 80%;
 }
 #home_banner #home_container #button_cont .sign {
@@ -48,7 +46,6 @@ body {
   width: 100%;
 }
 #about_banner #about_container {
-  border: 2px solid black;
   text-align: center;
   color: #4f7686;
   position: relative;
@@ -74,7 +71,6 @@ body {
   background: #4f7686;
 }
 #instructor_banner #instructor_container {
-  border: 2px solid white;
   text-align: center;
   color: #ffffff;
   position: relative;
@@ -84,13 +80,17 @@ body {
   font-size: 50px;
   margin: 10px;
 }
-#instructor_banner #instructor_container #photo_container {
-  border: 2px solid white;
-}
 #instructor_banner #instructor_container #photo_container h4 {
   width: 70%;
   display: block;
   margin: 0 auto;
+}
+#signup_banner {
+  position: absolute;
+  top: 300%;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 @media only screen and (max-width: 1000px) {
   #home_banner #home_container h1 {
