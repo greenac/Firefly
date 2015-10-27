@@ -1,17 +1,37 @@
-$(document).ready(function(){
 
 
-	$('a[href^="#"]').on('click', function(event) {
 
-	    var target = $( $(this).attr('href') );
+$(window).scroll(function() {
+	$('#about_container').each(function(){
+	var imagePos = $(this).offset().top;
 
-	    if( target.length ) {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top
-	        }, 1000);
-	    }
-
+	var topOfWindow = $(window).scrollTop();
+		if (imagePos < topOfWindow+400) {
+			$(this).addClass("slideUp");
+		}
 	});
+});
 
-}); //end ready
+$(window).scroll(function() {
+	$('#instructor_container').each(function(){
+	var imagePos = $(this).offset().top;
+
+	var topOfWindow = $(window).scrollTop();
+		if (imagePos < topOfWindow+400) {
+			$(this).addClass("fadeIn");
+		}
+	});
+});
+
+$('#lmore').on('click',function(){
+	$('html, body').animate({
+    scrollTop: $("#about_banner").offset().top
+}, 700);
+}); 
+
+
+$('.up').on('click',function(){
+	$('html, body').animate({
+    scrollTop: $("#signup_banner").offset().top
+}, 3000);
+}); 

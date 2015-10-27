@@ -37,6 +37,19 @@ body {
   padding: 10px;
   margin: 5px;
   width: 400px;
+  transition: 1s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+}
+#home_banner #home_container #button_cont .sign:hover {
+  background: #ffffff;
+  color: #ce620d;
+  transition: 1s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+}
+#home_banner #home_container #button_cont #learn {
+  transition: 1s all;
 }
 #about_banner {
   position: absolute;
@@ -46,6 +59,7 @@ body {
   width: 100%;
 }
 #about_banner #about_container {
+  visibility: hidden;
   text-align: center;
   color: #4f7686;
   position: relative;
@@ -62,6 +76,23 @@ body {
   margin: 0 auto;
   font-size: 20px;
 }
+#about_banner #about_container .container-fluid .row #about_signup {
+  border: 2px solid #4f7686;
+  background: none;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 25px;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+}
+#about_banner #about_container .container-fluid .row #about_signup:hover {
+  background: #4f7686;
+  color: #ffffff;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+}
 #instructor_banner {
   position: absolute;
   top: 200%;
@@ -73,17 +104,20 @@ body {
 #instructor_banner #instructor_container {
   text-align: center;
   color: #ffffff;
+  visibility: hidden;
   position: relative;
   top: 15%;
+  top: 5%;
 }
 #instructor_banner #instructor_container h1 {
   font-size: 50px;
-  margin: 10px;
+  margin: 30px 0;
 }
-#instructor_banner #instructor_container #photo_container h4 {
+#instructor_banner #instructor_container #photo_container p {
   width: 70%;
   display: block;
   margin: 0 auto;
+  font-size: 16px;
 }
 #signup_banner {
   position: absolute;
@@ -91,12 +125,42 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+  text-align: center;
+}
+#signup_banner #signup_container {
+  position: relative;
+  top: 15%;
+}
+#signup_banner #signup_container #sign_up {
+  border: 2px solid black;
+}
+#signup_banner #signup_container #sign_up h1 {
+  color: #ce620d;
+}
+#signup_banner #signup_container #faq {
+  border: 2px solid black;
+}
+#signup_banner #signup_container #faq h2 {
+  color: #ce620d;
+  padding: 10px;
+}
+#signup_banner #signup_container #faq h4 {
+  font-size: 20px;
+  color: #ce620d;
+}
+#signup_banner #signup_container #faq p {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  font-size: 18px;
 }
 @media only screen and (max-width: 1000px) {
   #home_banner #home_container h1 {
     font-size: 65px;
   }
   #home_banner #home_container #button_cont .sign {
+    margin-top: 30px;
     width: 250px;
     font-size: 16px;
   }
@@ -105,5 +169,12 @@ body {
   }
   #instructor_banner {
     height: 135%;
+  }
+  #signup_banner {
+    position: absolute;
+    top: 345%;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }

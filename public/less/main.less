@@ -59,6 +59,19 @@ body{
 				padding: 10px;
 				margin: 5px;
 				width: 400px;
+				transition: 1s all;
+				-webkit-transition: .5s all;
+				-moz-transition: .5s all;
+				&:hover{
+					background: @white;
+					color: @darkorange;
+					transition: 1s all;
+					-webkit-transition: .5s all;
+					-moz-transition: .5s all;
+				}
+			}
+			#learn{
+				transition: 1s all;
 			}
 		}
 	}
@@ -69,6 +82,7 @@ body{
 	.position(100%);
 	#about_container{
 		//border: 2px solid black; // DEV PURPOSES ONLY
+		visibility: hidden;
 		text-align: center;
 		color: @lightblue;
 		.mid_center;
@@ -85,6 +99,23 @@ body{
 					margin: 0 auto;
 					font-size: 20px;
 				}
+				#about_signup{
+					border: 2px solid @lightblue;
+					background: none;
+					font-size: 20px;
+					padding: 10px;
+					margin-top: 25px;
+					transition: .5s all;
+						-webkit-transition: .5s all;
+						-moz-transition: .5s all;
+					&:hover{
+						background: @lightblue;
+						color: @white;
+						transition: .5s all;
+						-webkit-transition: .5s all;
+						-moz-transition: .5s all;
+					}
+				}
 			}
 		}
 	}
@@ -98,24 +129,57 @@ body{
 		//border:2px solid white; //DEV PURPOSES ONLY
 		text-align: center;
 		color: @white;
+		visibility: hidden;
 		.mid_center;
+		top: 5%;
 		h1{
 			font-size: 50px;
-			margin: 10px;
+			margin: 30px 0;
 		}
 		#photo_container{
 			//border: 2px solid white; //DEV PURPOSES ONLY
-			h4{
+			p{
 				width: 70%;
 				display: block;
 				margin: 0 auto;
+				font-size: 16px;
 			}
 		}
 	}
 }
 
+//SIGN UP STYLINGS
+
 #signup_banner{
 	.position(300%);
+	text-align: center;
+	#signup_container{
+		.mid_center;
+		#sign_up{
+			border: 2px solid black;
+			h1{
+				color: @darkorange;
+			}
+		}
+		#faq{
+			border: 2px solid black;
+			h2{
+				color: @darkorange;
+				padding: 10px;
+			}
+			h4{
+				font-size: 20px;
+				color: @darkorange;
+			}
+			p{
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				width: 70%;
+				font-size: 18px;
+			}
+		}
+	}
 }
 
 //MEDIA BREAK 
@@ -127,6 +191,7 @@ body{
 			}
 			#button_cont{
 				.sign{
+					margin-top: 30px;
 					width: 250px;
 					font-size: 16px;
 				}
@@ -140,5 +205,8 @@ body{
 	}
 	#instructor_banner{
 		height: 135%;
+	}
+	#signup_banner{
+		.position(345%);
 	}
 }
