@@ -30,17 +30,6 @@ function Validator() {
             success: self.handleSuccessfulResponse,
             error: self.handleFailedResponse
         });
-
-        //$.ajax({
-        //    crossDomain: true,
-        //    type:"GET",
-        //    contentType: "application/json; charset=utf-8",
-        //    async:false,
-        //    url: "http://localhost:9042/save-client?callback=?",
-        //    data: {projectID:1},
-        //    dataType: "jsonp",
-        //    jsonpCallback: 'successcallback'
-        //});
     };
 
     this.validateFields = function () {
