@@ -1,42 +1,77 @@
-$('#sub').on('click', function(event){
-	event.preventDefault();
-	var fields = $('.info');
-	var validated = true;
+function Validator() {
+    this.buttonElement = $('#sub');
+    this.fields = $('.info');
 
-	var objectCreator = function (formField){
-		var fieldObj = {};
-		for(field in fields){
-			fieldObj[field.id] = field.value;
-		}
-		return fieldObj;
-	}
+    this.setUp = function () {
+        this.buttonElement.on('click', this.buttonClicked.bind(this));
+    };
 
-	var objectSender = function(fieldObj){
-		var encodedObject = JSON.stringify(fieldObj);
-		$.ajax({
-			type: 'POST',
-			url: 'localhost:9042/save-client',
-			data: encodedObject,
-			contentType: 'application/json; charset = utf-8',
-			dataType: "json",
-			success = function(msg){
-				console.log(msg);
-			}
-		});
-	}
+    this.objectCreator = function() {
+        var fieldObj = {};
+        for(var i=0; i < this.fields.length; i++) {
+            var field = this.fields[i];
+            if (field && field.id && field.value) {
+                fieldObj[field.id] = field.value;
+            }
+        }
 
-	for(var i = 0; i < fields.length; i++){
-		var field = fields[i];
-		if(field.value !== ""){
-			validated = false;
-			break
-		}
-	}
+        return fieldObj;
+    };
 
-	if(validated){
-		var validatedObject = objectCreator(fields);
-		objectSender(validatedObject);
-	}else{
-		alert('Enter all information');
-	}
-});
+    this.objectSender = function(fieldObj) {
+        var self = this;
+        console.log('data to send', fieldObj);
+        $.ajax({
+            url: "http://localhost:9042/save-client",
+            type: "post",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: JSON.stringify(fieldObj),
+            success: self.handleSuccessfulResponse,
+            error: self.handleFailedResponse
+        });
+
+        //$.ajax({
+        //    crossDomain: true,
+        //    type:"GET",
+        //    contentType: "application/json; charset=utf-8",
+        //    async:false,
+        //    url: "http://localhost:9042/save-client?callback=?",
+        //    data: {projectID:1},
+        //    dataType: "jsonp",
+        //    jsonpCallback: 'successcallback'
+        //});
+    };
+
+    this.validateFields = function () {
+        for(var i = 0; i < this.fields.length; i++) {
+            var field = this.fields[i];
+            if(field && field.value && field.value === "") {
+                return false;
+            }
+        }
+
+        return true;
+    };
+
+    this.buttonClicked = function (event) {
+        event.preventDefault();
+        if (this.validateFields()) {
+            var validatedObject = this.objectCreator();
+            this.objectSender(validatedObject);
+        } else {
+            alert('Enter all information');
+        }
+    };
+
+    this.handleSuccessfulResponse = function(response) {
+        console.log('Ajax request succeeded with message:', response);
+    };
+
+    this.handleFailedResponse = function(error) {
+        console.log('Ajax request failed with error:', error);
+    }
+}
+
+var validator = new Validator();
+validator.setUp();
