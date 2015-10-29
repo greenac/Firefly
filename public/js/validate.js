@@ -1,6 +1,12 @@
 function Validator() {
     this.buttonElement = $('#sub');
     this.fields = $('.info');
+    this.experienceMap = {
+        beginner: 0,
+        intermediate: 1,
+        advanced: 2,
+        master: 3
+    };
 
     this.setUp = function () {
         this.buttonElement.on('click', this.buttonClicked.bind(this));
@@ -8,12 +14,12 @@ function Validator() {
 
     this.objectCreator = function() {
         var fieldObj = {};
-        for(var i=0; i < this.fields.length; i++) {
-            var field = this.fields[i];
+        _.each(this.fields, function(field) {
             if (field && field.id && field.value) {
-                fieldObj[field.id] = field.value;
+                fieldObj[field.id] = field.id === 'experience' ?
+                    this.experienceMap[field.value] : field.value;
             }
-        }
+        }, this);
 
         return fieldObj;
     };
@@ -22,8 +28,8 @@ function Validator() {
         var self = this;
         console.log('data to send', fieldObj);
         $.ajax({
-            url: "http://localhost:9042/save-client",
-            type: "post",
+            url: 'http://localhost:9042/save-client',
+            type: 'post',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             data: JSON.stringify(fieldObj),
@@ -35,7 +41,7 @@ function Validator() {
     this.validateFields = function () {
         for(var i = 0; i < this.fields.length; i++) {
             var field = this.fields[i];
-            if(field && field.value && field.value === "") {
+            if(field && field.value && field.value === '') {
                 return false;
             }
         }
